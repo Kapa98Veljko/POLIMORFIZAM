@@ -1,4 +1,7 @@
 #include "Clock.h"
+#include<iomanip>
+#include<iostream>
+using namespace std;
 
 Clock::Clock()
 {
@@ -12,7 +15,11 @@ Clock::Clock(int h, int m, int s)
 
 void Clock::tick()
 {
-
+	//how should this shit work,i want it to tick for one second so naturali i ffirst check if i should increnemt new minut
+	s++;
+	if (s == 60) { s = 0; m++; }
+	if (m == 60) { h++; m = 0; }
+	if (h == 24) { h = 0; }
 }
 
 void Clock::printTime()
